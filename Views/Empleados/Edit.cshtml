@@ -1,0 +1,73 @@
+@model Login.Models.Empleado
+
+@{
+    ViewData["Title"] = "Actualizar";
+}
+
+<div class="container mt-5">
+<style>
+
+        body {
+            background-image: url('https://wallpapercave.com/uwp/uwp4331140.png'); 
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+    </style>
+
+
+
+
+
+    <div class="card shadow rounded">
+        <h5 class="card-header bg-primary text-white">Editar empleado</h5>
+        <div class="card-body">
+            <form asp-action="Edit" method="post">
+               
+                <div class="row mb-3">
+                    <label for="nombre " class="col-sm-3 col-form-label">nombre :</label>
+                    <div class="col-sm-9">
+                        <input asp-for="nombre " class="form-control" value="@Model.nombre ">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="apellido " class="col-sm-3 col-form-label">apellido :</label>
+                    <div class="col-sm-9">
+                        <input asp-for="apellido " class="form-control" value="@Model.apellido ">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="correo" class="col-sm-3 col-form-label">correo:</label>
+                    <div class="col-sm-9">
+                        <input asp-for="correo" class="form-control" value="@Model.correo">
+                    </div>
+                </div>
+
+
+                <div class="row mb-3">
+                    <label for="contraseña" class="col-sm-3 col-form-label">contraseña:</label>
+                    <div class="col-sm-9">
+                        <input asp-for="contraseña" class="form-control" value="@Model.contraseña">
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label for="celular" class="col-sm-3 col-form-label">celular:</label>
+                    <div class="col-sm-9">
+                        <input asp-for="celular" class="form-control" value="@Model.celular">
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label for="cargo" class="col-sm-3 col-form-label">cargo:</label>
+                    <div class="col-sm-9">
+                        <input asp-for="cargo" class="form-control" value="@Model.cargo">
+                    </div>
+                </div>
+
+
+                <button type="submit" class="btn btn-primary float-end">Actualizar</button>
+                <a asp-controller="Empleados" asp-action="Index" class="btn btn-success me-5 float-end">Cancelar</a>
+            </form>
+        </div>
+    </div>
+</div>
