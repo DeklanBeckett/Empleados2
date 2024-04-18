@@ -19,17 +19,13 @@ namespace Empleados.Controllers{
             return View(await _context.Horarios.ToListAsync());
         }
 
-        // public async Task<IActionResult> Create(int Id){
-        //     var c = await _context.Horarios.FindAsync(Id);
-        //     var nombre = await _context.Empleados.FirstOrDefaultAsync(em => em.id == Id);
-        //     ViewBag.Nombre = nombre.nombre;
-        //     ViewBag.Id = nombre.id;
-        //     return View(c);
-        // }
-
-        public async Task<IActionResult> Create(){
+        public async Task<IActionResult> Create(int Id){
+            var nombre = await _context.Empleados.FirstOrDefaultAsync(em => em.id == Id);
+            ViewBag.Nombre = nombre.nombre;
+            ViewBag.Id = nombre.id;
             return View();
         }
+
 
 
         [HttpPost]

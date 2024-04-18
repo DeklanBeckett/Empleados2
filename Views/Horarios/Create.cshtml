@@ -1,18 +1,9 @@
 @model Login.Models.Horario
 
-@* <form asp-action="Create" method="post">
-    <input class="none" type="text" value="@ViewBag.Nombre">
-    <input class="none" asp-for="HoraIngreso" type="datetime">
-    <input class="none" asp-for="HoraSalida" type="datetime">
-    <input class="none" asp-for="IdEmpleado" type="number" value="@ViewBag.Id">
-    <button class="btn btn-primary" type="submit">Ingresar hora</button>
-
-</form>     *@
-
 <form asp-action="Create" method="post">
-    <input class="none" type="text" value="Nombre Empleado">
+    <input class="none" type="text" value="">
     <input class="none" asp-for="HoraIngreso" type="datetime">
     <input class="none" asp-for="HoraSalida" type="datetime">
-    <input class="none" asp-for="IdEmpleado" type="number" value="Id Empleado">
+    <input class="none" asp-for="IdEmpleado" type="number" value="">
     <button class="btn btn-primary" type="submit">Ingresar hora</button>
-</form>  
+</form>     
