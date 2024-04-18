@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Login.Data;
 
-namespace Empleados.Controllers{
+namespace Empleados2.Controllers{
     public class LandingController : Controller{
 
 

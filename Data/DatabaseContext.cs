@@ -9,5 +9,6 @@ namespace Login.Data{
             
         }
         public DbSet<Empleado> Empleados { get; set; }
+        public DbSet<Horario> Horarios { get; set;}
     }
 }
