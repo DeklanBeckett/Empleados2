@@ -26,7 +26,7 @@ namespace Empleados.Controllers
             var usuario = _context.Empleados.FirstOrDefault(u => u.correo == correo);
             if (usuario != null && usuario.contraseña == contraseña)
             {
-            
+                HttpContext.Session.SetString("Nombre", usuario.nombre);
                 return RedirectToAction("Index", "Empleados");
             }
             else
