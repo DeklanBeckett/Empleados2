@@ -19,6 +19,7 @@ public class EmpleadosController : Controller     //herencia de la clase control
     public async Task<IActionResult> Index()  //get
     {   
         @ViewBag.Nombre =  HttpContext.Session.GetString("Nombre");
+        @ViewBag.Id =  HttpContext.Session.GetInt32("Id");
         var Emp = await _context.Empleados.ToListAsync();
         return View(Emp);   //se llama a la tabla
     }
@@ -90,6 +91,13 @@ public IActionResult Delete(int? id)
 
     return RedirectToAction("Eliminar"); // 
 }
+
+
+public IActionResult Cerrar(){
+    HttpContext.Session.Clear();
+    return RedirectToAction("Index", "Landing");
+}
+
 
 
 }
