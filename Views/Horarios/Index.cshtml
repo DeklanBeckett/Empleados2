@@ -1,0 +1,36 @@
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <a href=""></a>
+            <a href=""></a>
+            <a href=""></a>
+        </div>
+        <div class="col-md-9">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Empleado</th>
+                        <th>Hora Ingreso</th>
+                        <th>Hora Salida</th>
+                        <th>Detalles</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach(var h in Model){
+                        <tr>
+                            <td>nombre empleado</td>
+                            <td>@h.HoraIngreso</td>
+                            <td>@h.HoraSalida</td>
+                            <td>
+                                <a class="btn btn-success" asp-controller="Horarios" asp-action="Details" asp-route-id="@h.Id">Detalles</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+                
+            </table>
+        </div>
+    </div>
+</div>
