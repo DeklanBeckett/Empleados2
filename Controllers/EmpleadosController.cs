@@ -29,7 +29,7 @@ public class EmpleadosController : Controller     //herencia de la clase control
 public  IActionResult Create(Empleado y){
     _context.Empleados.Add(y);
      _context.SaveChanges();
-    return RedirectToAction("Index");
+    return RedirectToAction("Index", "Landing");
 
 }
 
