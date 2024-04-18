@@ -3,7 +3,6 @@ using Microsoft.EntityFrameworkCore;
 using Login.Data;
 using Login.Models;
 
-
 namespace Empleados.Controllers
 {
     public class LandingController : Controller
