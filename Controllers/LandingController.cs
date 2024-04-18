@@ -1,16 +1,41 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Login.Data;
-
-namespace Empleados.Controllers{
-    public class LandingController : Controller{
+using Login.Models;
 
 
-        
-        public IActionResult Index(){
+namespace Empleados.Controllers
+{
+    public class LandingController : Controller
+    {
+        private readonly DatabaseContext _context;
+
+        public LandingController(DatabaseContext context)
+        {
+            _context = context;
+        }
+
+        public IActionResult Index()
+        {
             return View();
         }
-    }
 
-    
+        [HttpPost]
+        public IActionResult Logins(string correo, string contraseña)
+        {
+            
+            var usuario = _context.Empleados.FirstOrDefault(u => u.correo == correo);
+            if (usuario != null && usuario.contraseña == contraseña)
+            {
+            
+                return RedirectToAction("Index", "Empleados");
+            }
+            else
+            {
+                
+                ViewBag.Error = "Correo electonico o contraseña incorrectos";
+                return RedirectToAction("Index", "Landing");
+            }
+        }
+    }
 }
