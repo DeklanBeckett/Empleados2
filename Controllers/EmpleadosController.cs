@@ -17,7 +17,8 @@ public class EmpleadosController : Controller     //herencia de la clase control
 
     // Acción para mostrar la lista de trabajos
     public async Task<IActionResult> Index()  //get
-    {
+    {   
+        @ViewBag.Nombre =  HttpContext.Session.GetString("Nombre");
         var Emp = await _context.Empleados.ToListAsync();
         return View(Emp);   //se llama a la tabla
     }
