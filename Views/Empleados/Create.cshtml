@@ -1,0 +1,68 @@
+@model Login.Models.Empleado
+
+@{
+    ViewData["Title"] = "Crear Empleado";
+}
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card shadow-lg">
+                <div class="card-header bg-dark text-white">
+                    <h4 class="mb-0">Crear Empleado</h4>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Create" method="post">
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label asp-for="nombre" class="form-label">Nombre</label>
+                                <input asp-for="nombre" class="form-control" />
+                            </div>
+                            <div class="col-md-6">
+                                <label asp-for="apellido" class="form-label">Apellido</label>
+                                <input asp-for="apellido" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label asp-for="correo" class="form-label">Correo Electrónico</label>
+                                <input asp-for="correo" type="email" class="form-control" />
+                            </div>
+                            <div class="col-md-6">
+                                <label asp-for="contraseña" class="form-label">Contraseña</label>
+                                <input asp-for="contraseña" type="password" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label asp-for="celular" class="form-label">Celular</label>
+                                <input asp-for="celular" class="form-control" />
+                            </div>
+                            <div class="col-md-6">
+                                <label asp-for="cargo" class="form-label">Cargo</label>
+                                <input asp-for="cargo" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 text-center">
+                                <button type="submit" class="btn btn-primary px-4">Crear Empleado</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<style>
+    body {
+        background-image: url('https://wallpapercave.com/wp/wp10778053.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-attachment: fixed;
+    }
+</style>
