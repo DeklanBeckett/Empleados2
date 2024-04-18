@@ -1,12 +1,25 @@
+@{
+    ViewData["Title"] = "Iniciar sesión";
+}
 
-<form asp-controller="Account" asp-action="Login" method="post">
-    <div class="form-group">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="Username" class="form-control" />
+<div class="login-card">
+    <div class="card-header">
+        <div class="log">Login</div>
     </div>
-    <div class="form-group">
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="Password" class="form-control" />
-    </div>
-    <button type="submit" class="btn btn-primary">Login</button>
-</form>
+    <form method="post" asp-action="Logins" asp-controller="Sesion">
+        <div class="form-group">
+            <label for="correo">Correo:</label>
+            <input required="" type="text" name="correo">
+        </div>
+        <div class="form-group">
+            <label for="contraseña">Contraseña:</label>
+            <input required="" type="password" name="contraseña">
+        </div>
+        <div class="form-group text-center">
+            <button class="animated-button" type="submit">
+                <span>Iniciar sesión</span>
+                <span></span>
+            </button>
+        </div>
+    </form>
+</div>
