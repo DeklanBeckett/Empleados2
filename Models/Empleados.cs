@@ -1,5 +1,5 @@
 namespace Login.Models{
-    public class Empleado{
+    public class Empleado {
 
         public int id{get; set; }
         public string nombre {get; set;}
