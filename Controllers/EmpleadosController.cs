@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Login.Models;
 using Login.Data; // Asegúrate de tener el namespace correcto
 
-namespace Empleados2.Controllers
+namespace Empleados.Controllers
 {
 public class EmpleadosController : Controller     //herencia de la clase controller 
 {
@@ -43,7 +43,7 @@ public  IActionResult Create(Empleado y){
             return NotFound();
         }
 
-        var J = await _context.Empleados.FirstOrDefaultAsync(J=> J.Id == id);
+        var J = await _context.Empleados.FirstOrDefaultAsync(J=> J.id == id);
         if (J == null)
         {
             return NotFound();
@@ -56,7 +56,7 @@ public  IActionResult Create(Empleado y){
 
     public async Task<IActionResult> Edit(int id, Empleado Emp)
     {
-        if (id != Emp.Id)
+        if (id != Emp.id)
         {
             return NotFound();
         }
@@ -81,7 +81,7 @@ public IActionResult Eliminar(){
 public IActionResult Delete(int? id)
 {
 
-    var Emp = _context.Empleados.FirstOrDefault(m => m.Id == id);
+    var Emp = _context.Empleados.FirstOrDefault(m => m.id == id);
    
 
     _context.Empleados.Remove(Emp);

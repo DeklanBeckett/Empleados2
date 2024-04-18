@@ -2,71 +2,64 @@
 
 <style>
         
-        body {
+body{
             background-image: url('https://wallpapercave.com/uwp/uwp4333769.jpeg'); 
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
-        }
-    </style>
+}
+</style>
 
 
 
 
-  <h4 class="text-dark text-center display-1 text-gradient text-shadow text-animated">Empleados</h4>
+<h4 class="text-dark text-center display-1 text-gradient text-shadow text-animated">Empleados</h4>
 
-  
 
- 
-  <table class="table table-striped">
+
+
+<table class="table table-striped">
     <thead>
-      <tr>
-        <th>ID</th>
-        <th>nombre</th>
-        <th>apellido</th>
-        <th>correo</th>
-        <th>contraseña</th>
-        <th>celular</th>
-        <th>cargo</th>
-       
-       
-
-      </tr>
+        <tr>
+            <th>ID</th>
+            <th>nombre</th>
+            <th>apellido</th>
+            <th>correo</th>
+            <th>contraseña</th>
+            <th>celular</th>
+            <th>cargo</th>
+        </tr>
     </thead>
     <tbody>
-      @foreach(var Empleados in Model)
-      {
+    @foreach(var Empleados in Model)
+    {
         <tr>
-          <td>@Empleados.Id</td>
-          <td>@Empleados.nombre</td>
-          <td>@Empleados.apellido</td>
-           <td>@Empleados.correo</td>
+            <td>@Empleados.id</td>
+            <td>@Empleados.nombre</td>
+            <td>@Empleados.apellido</td>
+            <td>@Empleados.correo</td>
             <td>@Empleados.contraseña</td>
-             <td>@Empleados.celular</td>
-              <td>@Empleados.cargo </td>
-               
-          <td>
-            <a class="btn btn-info me-4 mt-4" asp-controller="Empleados" asp-action="Edit" asp-route-id="@Empleados.Id">Editar</a>
+            <td>@Empleados.celular</td>
+            <td>@Empleados.cargo </td>
+            <td>
+            <a class="btn btn-info me-4 mt-4" asp-controller="Empleados" asp-action="Edit" asp-route-id="@Empleados.id">Editar</a>
             @* <a class="btn btn-primary me-4 mt-4" asp-controller="Empleados" asp-action="Details" asp-route-id="@Empleados.Id">Detail</a> *@
-            <a class="btn btn-danger me-4 mt-4" asp-controller="Empleados" asp-action="Delete" asp-route-id="@Empleados.Id">Eliminar</a>
-          </td>
+            <a class="btn btn-danger me-4 mt-4" asp-controller="Empleados" asp-action="Delete" asp-route-id="@Empleados.id">Eliminar</a>
+            </td>
         </tr>
-      }
+    }
     </tbody>
-  </table>
+</table>
 </div>
- 
- <div class="container mt-8">
+
+<div class="container mt-8">
     <div class="row">
 
 <p>
-  <a class="btn btn-primary shadow-sm rounded-pill" asp-controller="Landing" asp-action="Index">Login</a> 
+    <a class="btn btn-primary shadow-sm rounded-pill" asp-controller="Landing" asp-action="Index">Login</a> 
 </p>
-
-
-
-  <a class="btn btn-primary shadow-sm rounded-pill" asp-controller="EMpleados" asp-action="Crear">Crear empleado</a> 
+    <a class="btn btn-primary shadow-sm rounded-pill" asp-controller="EMpleados" asp-action="Crear">Crear empleado</a> 
 </p>
 
 </div>
- </div>
+</div>

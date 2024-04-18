@@ -1,7 +1,7 @@
 namespace Login.Models{
     public class Empleado {
 
-        public int Id{get; set; }
+        public int id{get; set; }
         public string nombre {get; set;}
         public string apellido {get; set;}
         public string correo {get; set;}
