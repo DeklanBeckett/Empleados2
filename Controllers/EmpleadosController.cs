@@ -16,7 +16,7 @@ public class EmpleadosController : Controller     //herencia de la clase control
     }
 
     // Acción para mostrar la lista de trabajos
-    public async Task<IActionResult> Index()  //get
+    public async Task<IActionResult> Index2()  //get
     {   
         @ViewBag.Nombre =  HttpContext.Session.GetString("Nombre");
         @ViewBag.Id =  HttpContext.Session.GetInt32("Id");
@@ -98,7 +98,13 @@ public IActionResult Cerrar(){
     return RedirectToAction("Index", "Landing");
 }
 
-
+public async Task<IActionResult> Index()  //get
+    {   
+        @ViewBag.Nombre =  HttpContext.Session.GetString("Nombre");
+        @ViewBag.Id =  HttpContext.Session.GetInt32("Id");
+        var Emp = await _context.Empleados.ToListAsync();
+        return View(Emp);   //se llama a la tabla
+    }
 
 }
 }
